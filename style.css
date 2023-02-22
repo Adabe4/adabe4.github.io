@@ -15,7 +15,7 @@ margin-right: 28%;}
 
 /* This defines some general information about the webpage, i.e. the font. */
 body {
-font: tahoma
+font: tahoma;
 font-family: sans-serif;
 line-height: 1.45;}
 
@@ -28,6 +28,22 @@ margin-bottom: 0;
 border-left: 5px ridge darkblue;
 border-radius: 4px;
 background: #b3e5fc;}
+
+/* Create clickable buttons */
+.button {
+border: 2px ridge darkblue;
+border-radius: 4px;
+color: black;
+height: 3em;
+background: #b3e5fc;
+padding: 2px;
+text-align: center;
+display: inline-block;
+margin: 4px 2px;
+cursor: pointer;
+}
+/* If I want to make different buttons. Call with button class = "button button1" */
+.button1 {width: 100%;}
 
 /* Create two equal columns that float next to each other */
 .column {
