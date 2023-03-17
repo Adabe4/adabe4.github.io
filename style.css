@@ -2,11 +2,39 @@
 html { font-size: 2vw; }
 
 /* This defines the big container for all content. */
-#container {
+.container {
 margin-top: 30px;
 margin-left: 28%;
 text-align: justify;
 margin-right: 28%;}
+
+/* Defines a container that contains a picture and some text in a specified location (here: top-left). */
+
+.container2 {
+	position: relative;
+	text-align: center;
+	color: rgb(0,0,0);
+  }
+  
+  .top-left2 {
+	position: absolute;
+	top: 20%;
+	left: 15%;
+  }
+
+/* Same as above. Only positions the text differently to make it look nicer on smaller screens. */
+
+.container3 {
+	position: relative;
+	text-align: center;
+	color: rgb(0,0,0);
+  }
+  
+  .top-left3 {
+	position: absolute;
+	top: 0%;
+	left: 2%;
+  }
 
 /* This forces the container to adapt to the window size; i.e. makes the webpage somehow 'adaptive' to the device you use. */
 @media all and (min-width:1000px) { html { font-size: 18px; } }
@@ -20,6 +48,10 @@ font-family: sans-serif;
 line-height: 1.45;}
 
 /* h2 and h3 are tags used for the titles of your webpage; h3 should be smaller than h2 (there is also a biggest one, h1, that I don't use) */
+h1 {
+	text-align: center;
+	margin-bottom: 0;
+}
 h2 {
 text-align: center;
 margin-top: 0;}
@@ -37,8 +69,8 @@ color: black;
 height: 3em;
 background: #b3e5fc;
 padding: 2px;
-text-align: center;
 display: inline-block;
+text-align: center;
 margin: 4px 2px;
 cursor: pointer;
 }
