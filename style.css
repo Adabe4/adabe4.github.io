@@ -2,7 +2,7 @@
 html { font-size: 2vw; }
 
 /* This defines the big container for all content. */
-.container {
+#container {
 margin-top: 30px;
 margin-left: 28%;
 text-align: justify;
@@ -21,6 +21,11 @@ margin-right: 28%;}
 	top: 20%;
 	left: 15%;
   }
+.top-left21 {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+}
 
 /* Same as above. Only positions the text differently to make it look nicer on smaller screens. */
 
@@ -43,39 +48,99 @@ margin-right: 28%;}
 
 /* This defines some general information about the webpage, i.e. the font. */
 body {
-font: tahoma;
+font: tahoma
 font-family: sans-serif;
 line-height: 1.45;}
 
 /* h2 and h3 are tags used for the titles of your webpage; h3 should be smaller than h2 (there is also a biggest one, h1, that I don't use) */
 h1 {
-	text-align: center;
-	margin-bottom: 0;
+text-align: center;
+text-transform: uppercase;
+font-size: 600%;
+background: linear-gradient(to right, rgba(26, 117, 255, 0.85) 0%, rgba(26, 117, 255, 0.2) 40%, rgba(26, 117, 255, 1) 90%), linear-gradient(rgb(255, 255, 255) 42%, rgb(0, 77, 26) 72%);
+  /* you can change the colors based on your preference */
+  background-clip: text;
+  /*add this line, it defines how far the background should extend within an element, here we set it to text */
+  -webkit-background-clip: text;
+  /* add this line, for browsers compatibility */
+  -webkit-text-fill-color: transparent;
+  /* specifies the fill color of text characters. We use transparent to use the background value as our text fill */
+margin-bottom: 0;
 }
+
 h2 {
 text-align: center;
-margin-top: 0;}
+text-transform: uppercase;
+font-size: 150%;
+}
+
 h3 {
+text-transform: uppercase;
+text-align: center;
+font-size: 110%;}
+
+h4 {
 margin-bottom: 0;
-border-left: 5px ridge darkblue;
+border-left: 5px ridge rgba(26, 117, 255, 0.85);
 border-radius: 4px;
-background: #b3e5fc;}
+background: rgba(26, 117, 255, 0.2);}
+
+h5 {
+text-align: center;
+text-transform: uppercase;
+font-size: 150%;
+border-bottom: medium double rgba(26, 117, 255, 0.85);
+padding-bottom: 15px;
+margin-bottom: 20px;}
 
 /* Create clickable buttons */
 .button {
-border: 2px ridge darkblue;
-border-radius: 4px;
+border: 2px ridge rgba(26, 117, 255, 0.85);
+border-radius: 50px;
 color: black;
 height: 3em;
-background: #b3e5fc;
-padding: 2px;
-display: inline-block;
+background: rgba(26, 117, 255, 0.2);
+width: 95%;
+padding: 0px;
 text-align: center;
+display: inline-block;
 margin: 4px 2px;
 cursor: pointer;
 }
 /* If I want to make different buttons. Call with button class = "button button1" */
-.button1 {width: 100%;}
+/*
+.button1 {width: 95%;}
+
+/* Save the blue tones that I used before: dark -> darkblue, light -> #b3e5fc */
+
+/* Create a grid. I use this for the titlepage. */
+.item1{grid-area: foto;}
+.item2{grid-area: name;}
+.item3{grid-area: contact; border: 2px solid rgba(26, 117, 255, 0.85); border-radius: 30px; background: rgba(26, 117, 255, 0.2); padding: 4px;}
+.item3-mobile{grid-area: contact-mobile; border: 2px solid rgba(26, 117, 255, 0.85); border-radius: 10px; background: rgba(26, 117, 255, 0.2); padding: 4px;}
+.item4{grid-area: moin;}
+.item5{grid-area: buttons;}
+.item6{grid-area: summary;}
+
+.grid-container{
+display: grid;
+grid-template-areas: 'foto foto moin moin moin' 'foto foto moin moin moin' 'name name buttons buttons buttons' 'name name summary summary summary' 'contact contact summary summary summary';
+gap: 0px 30px;
+}
+
+/* Create a different grid layout for the mobile version of the starting page. */
+.grid-container-mobile{
+display: grid;
+grid-template-areas: 'moin moin' 'buttons buttons' 'foto name' 'contact-mobile contact-mobile' 'summary summary';
+gap: 10px 2px;
+
+}
+
+/* Text alignment and such in the grid entries. */
+.grid-container > div{
+text-align: center;
+padding: 20px 0;
+}
 
 /* Create two equal columns that float next to each other */
 .column {
@@ -91,13 +156,23 @@ padding: 0% 0%;
 }
 
 .right {
-width: 60%;
-text-align: center;
-padding-top: 8em;
+width: 30%;
+text-align: right;
+padding-top: 4em;
 }
 
 .left {
-width: 40%;
+width: 70%;
+text-align: left;
+}
+
+.right50 {
+width: 50%;
+text-align: center;
+}
+
+.left50 {
+width: 50%;
 text-align: center;
 }
 
@@ -108,15 +183,30 @@ display: table;
 clear: both;
 }
 
+/* Create a scale for the skills section by using up to 5 colored boxes. */
+
+.box {
+height: 1em;
+width: 10em;
+}
+
+.beginner{background: linear-gradient(to right, rgba(26, 117, 255, 0.2) 0%, rgba(26, 117, 255, 0.2) 70%, rgba(26, 117, 255, 0.85) 70%, rgba(26, 117, 255, 0.85) 100%);}
+
+.intermediate{background: linear-gradient(to right, rgba(26, 117, 255, 0.2) 0%, rgba(26, 117, 255, 0.2) 50%, rgba(26, 117, 255, 0.85) 50%, rgba(26, 117, 255, 0.85) 100%);}
+
+.advanced{background: linear-gradient(to right, rgba(26, 117, 255, 0.2) 0%, rgba(26, 117, 255, 0.2) 20%, rgba(26, 117, 255, 0.85) 20%, rgba(26, 117, 255, 0.85) 100%);}
+
+.fluent{background-color: rgba(26, 117, 255, 0.85);}
+
 /* this styles how the links appear on your webpage */
 a, a:link, a:hover, a:visited {
 color: inherit;
 text-decoration: none;
-border-bottom: 2px dotted darkblue;}
+border-bottom: 2px dotted rgba(26, 117, 255, 0.95);}
 
 /* hover describes what happens when your cursor is on the link */
 a:hover {
-border-bottom: 1.5px solid darkblue;}
+border-bottom: 1.5px solid rgba(26, 117, 255, 1);}
 
 /* Tells which size in pixels counts as mobile or desktop */
 
